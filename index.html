@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awesome Product Card Using HTML CSS & JQuery</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+</head>
+
+<body>
+  <div class="product-card">
+    <h1>Original shoes</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+    <div class="product-pic">
+    </div>
+    <div class="product-colors">
+      <span class="blue active" data-color="#70a1ff" data-pic="url(1.png)"></span>
+      <span class="green" data-color="#27ae60" data-pic="url(2.png)"></span>
+      <span class="yellow" data-color="#f1c40f" data-pic="url(3.png)"></span>
+      <span class="rose" data-color="#ff6b81" data-pic="url(4.png)"></span>
+    </div>
+    <div class="product-info">
+      <div class="product-price">$90</div>
+      <a href="#" class="product-button">add to cart</a>
+    </div>
+  </div>
+</body>
+<script>
+  $(".product-colors span").click(function () {
+    $(".product-colors span").removeClass("active");
+    $(this).addClass("active");
+    $("body").css("background", $(this).attr("data-color"));
+    $(".product-price").css("color", $(this).attr("data-color"));
+    $(".product-button").css("color", $(this).attr("data-color"));
+    $(".product-pic").css("background-image", $(this).attr("data-pic"));
+  });
+</script>
+
+</html>
